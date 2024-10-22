@@ -33,10 +33,18 @@ or as a named import:
 import { persistLocal } from 'persisty';
 ```
 
-> [!NOTE]
-> You have the flexibility to use either the import of `persisty` or `persistLocal`, as they refer to the same functionality.
+> **Note**: You have the flexibility to use either the import of `persisty` or
+> `persistLocal`, as they refer to the same functionality.
+>
+> In rare cases where you encounter a TypeError or ReferenceError due to
+> imports, you may need to import the package directly from npm using the
+> following syntax:
+>
+> ```javascript
+> import { persistLocal } from 'https://www.unpkg.com/persisty@2.0.0/src/index.js';
+> ```
 
-### store
+### store data in localStorage
 
 ```javascript
 const orders = [
@@ -50,7 +58,7 @@ persisty.orders = orders // Also saved in you browser localStorage
 persistLocal.orders = orders
 ```
 
-### get
+### get data in localStorage
 
 ```javascript
 console.log(persisty.orders);
@@ -62,7 +70,7 @@ console.log(persisty.orders);
 
 ```
 
-### delete
+### delete data in localStorage
 
 ```javascript
 delete persisty.orders
@@ -81,7 +89,7 @@ Import `persistSession` to interact with  `sessionStorage`.
 import { persistSession } from 'persisty';
 ```
 
-### store
+### store data in sessionStorage
 
 ```javascript
 const orders = [
@@ -92,7 +100,7 @@ const orders = [
 persistSession.orders = orders // Also saved in you browser sessionStorage
 ```
 
-### get
+### get data in sessionStorage
 
 ```javascript
 console.log(persistSession.orders);
@@ -104,7 +112,7 @@ console.log(persistSession.orders);
 
 ```
 
-### delete
+### delete data in sessionStorage
 
 ```javascript
 delete persistSession.orders
